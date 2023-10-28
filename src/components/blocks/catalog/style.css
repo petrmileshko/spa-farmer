@@ -21,9 +21,7 @@
   max-width: 540px;
   padding: 20px;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  gap: 20px;
 }
 
 .catalog__item::before {
@@ -68,7 +66,7 @@
 }
 
 .catalog__item-body {
-  margin: 0;
+  margin: 20px 0 0 0;
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
