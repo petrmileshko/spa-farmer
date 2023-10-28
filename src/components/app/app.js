@@ -1,9 +1,6 @@
-import "./style.css";
+import PageWrapper from "../layout/page-wrapper/page-wrapper";
+import "../app/style.css";
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Фермерские продукты</h1>
-    </div>
-  );
+  return <PageWrapper />;
 }
