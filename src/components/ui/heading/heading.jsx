@@ -1,7 +1,9 @@
 import "../heading/style.css";
 
-function Heading({ children }) {
-  return <h2 className="heading">{children}</h2>;
+function Heading({ level, children }) {
+  const CustomHTag = `h${level}`;
+
+  return <CustomHTag className="heading">{children}</CustomHTag>;
 }
 
 export default Heading;
