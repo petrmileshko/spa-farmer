@@ -13,7 +13,8 @@ export const StyledButton = styled.a`
   font-weight: 700;
   line-height: 27px;
   color: #fff;
-  background-color: #fc9b27;
+  background-color: ${(props) =>
+    props.theme.buttonBackground ? props.theme.buttonBackground : "#000"};
   border: none;
   background-image: none;
   box-shadow: none;

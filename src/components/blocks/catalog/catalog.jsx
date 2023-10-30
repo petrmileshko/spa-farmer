@@ -1,35 +1,33 @@
 import Heading from "../../ui/heading/heading";
 import Button from "../../ui/button/button";
-import "../catalog/style.css";
+
+import {
+  SectionCatalog,
+  CatalogList,
+  CatalogItem,
+  CatalogItemHeader,
+  CatalogItemBody,
+  CatalogItemProperties,
+  CatalogItemType
+} from "./style";
 
 function Catalog({ items }) {
   return items && items.length ? (
-    <section className="catalog">
+    <SectionCatalog>
       <Heading level="2">Почему фермерские продукты лучше?</Heading>
-      <ul className="catalog__list">
+      <CatalogList>
         {items.map((item) => (
-          <li
-            className={`catalog__item catalog__item--${item.index} catalog__item--${item.type}`}
-          >
-            <p className="catalog__item-header">
-              <span
-                className={`catalog__item-type catalog__item-type--${item.type}`}
-              >
-                {item.text}
-              </span>
-              <span className="catalog__item-properties">
-                {item.properties}
-              </span>
-            </p>
-            <p
-              className="catalog__item-body"
-              dangerouslySetInnerHTML={{ __html: item.body }}
-            />
-          </li>
+          <CatalogItem type={item.type} image={item.image}>
+            <CatalogItemHeader as="p">
+              <CatalogItemType type={item.type}>{item.text}</CatalogItemType>
+              <CatalogItemProperties>{item.properties}</CatalogItemProperties>
+            </CatalogItemHeader>
+            <CatalogItemBody dangerouslySetInnerHTML={{ __html: item.body }} />
+          </CatalogItem>
         ))}
-      </ul>
+      </CatalogList>
       <Button link="/buy">Купить</Button>
-    </section>
+    </SectionCatalog>
   ) : null;
 }
 

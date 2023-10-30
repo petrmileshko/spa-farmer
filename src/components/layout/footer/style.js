@@ -6,7 +6,8 @@ export const StyledFooter = styled.footer`
   left: 0;
   right: 0;
   display: flex;
-  width: 1280px;
+  width: ${(props) =>
+    props.theme.pageWidth ? props.theme.pageWidth : "1280px"};
   height: 80px;
   margin: 0 auto;
   padding: 10px 90px;
