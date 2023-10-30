@@ -1,11 +1,11 @@
 import Button from "../../ui/button/button";
-import "../nav/style.css";
+import { StyledNav } from "./style";
 
 function Nav() {
   return (
-    <nav>
+    <StyledNav>
       <Button link="/buy">Купить</Button>
-    </nav>
+    </StyledNav>
   );
 }
 
