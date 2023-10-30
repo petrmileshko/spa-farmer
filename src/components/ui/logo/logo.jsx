@@ -1,12 +1,12 @@
-import logoSvg from "/src/assets/logo.svg";
-import "../logo/style.css";
+import { ReactComponent as LogoImage } from "/src/assets/logo.svg";
+import { LogoLink, LogoText } from "./style";
 
 function Logo() {
   return (
-    <a className="logo__link" href="/">
-      <img src={logoSvg} alt="логотип Фермер" />
-      <span className="logo__text">Фермерские продукты</span>
-    </a>
+    <LogoLink href="/">
+      <LogoImage />
+      <LogoText>Фермерские продукты</LogoText>
+    </LogoLink>
   );
 }
 
