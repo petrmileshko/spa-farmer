@@ -1,10 +1,12 @@
-import "../button/style.css";
+import { StyledButton } from "./style";
 
-function Button({ children }) {
+function Button({ children, link }) {
   return (
-    <button className="button" type="button">
+    <StyledButton
+      {...(link ? { href: link } : { as: "button", type: "button" })}
+    >
       {children}
-    </button>
+    </StyledButton>
   );
 }
 

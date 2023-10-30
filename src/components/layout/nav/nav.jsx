@@ -4,7 +4,7 @@ import "../nav/style.css";
 function Nav() {
   return (
     <nav>
-      <Button>Купить</Button>
+      <Button link="/buy">Купить</Button>
     </nav>
   );
 }
