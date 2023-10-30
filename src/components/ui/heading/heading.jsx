@@ -1,9 +1,13 @@
-import "../heading/style.css";
+import { StyledHeading } from "./style";
 
 function Heading({ level, children }) {
-  const CustomHTag = `h${level}`;
+  const headingLevel = `h${level}`;
 
-  return <CustomHTag className="heading">{children}</CustomHTag>;
+  return (
+    <StyledHeading {...(level ? { as: headingLevel } : { as: "h2" })}>
+      {children}
+    </StyledHeading>
+  );
 }
 
 export default Heading;

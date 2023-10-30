@@ -1,7 +1,7 @@
-import "../title/style.css";
+import { StyledTitle } from "./style";
 
 function Title({ children }) {
-  return <h1 className="title">{children}</h1>;
+  return <StyledTitle>{children}</StyledTitle>;
 }
 
 export default Title;
