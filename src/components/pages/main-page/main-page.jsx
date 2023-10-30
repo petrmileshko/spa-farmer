@@ -1,13 +1,13 @@
 import About from "../../blocks/about/about";
 import Catalog from "../../blocks/catalog/catalog";
-import "../main-page/style.css";
+import { StyledMainPage } from "./style";
 
 function MainPage({ items }) {
   return (
-    <>
+    <StyledMainPage>
       <About />
       <Catalog items={items} />
-    </>
+    </StyledMainPage>
   );
 }
 
