@@ -5,6 +5,7 @@ import imageFour from "/src/assets/image4.svg";
 
 const catalogItems = [
   {
+    index: 0,
     image: imageOne,
     type: "farmer",
     text: "Фермерские продукты",
@@ -13,6 +14,7 @@ const catalogItems = [
       "Домашняя колбаса из мяса, соли и специй и колбаса из магазина — два настолько разных продукта, что они даже не родственники"
   },
   {
+    index: 1,
     image: imageTwo,
     type: "shop",
     text: "Магазинные продукты",
@@ -21,6 +23,7 @@ const catalogItems = [
       "Из-за большого количество товара сотрудники магазинов не успевают своевременно производить замену товара"
   },
   {
+    index: 2,
     image: imageThree,
     type: "farmer",
     text: "Фермерские продукты",
@@ -29,6 +32,7 @@ const catalogItems = [
       "Поставляем местные органические продукты выращенные без пестицидов и химических удобрений."
   },
   {
+    index: 3,
     image: imageFour,
     type: "shop",
     text: "Магазинные продукты",

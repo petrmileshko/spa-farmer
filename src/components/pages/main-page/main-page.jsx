@@ -1,12 +1,12 @@
 import About from "../../blocks/about/about";
-import Catalog from "../../blocks/catalog/catalog";
+import Features from "../../blocks/features/features";
 import { StyledMainPage } from "./style";
 
 function MainPage({ items }) {
   return (
     <StyledMainPage>
       <About />
-      <Catalog items={items} />
+      <Features items={items} />
     </StyledMainPage>
   );
 }
