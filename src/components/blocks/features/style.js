@@ -36,6 +36,6 @@ export const Feature = styled.li`
     background-repeat: no-repeat;
     background-position: center;
     content: "";
-    background-image: url(${(props) => props.image});
+    background-image: url(${(props) => props.$image});
   }
 `;

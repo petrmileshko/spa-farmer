@@ -6,14 +6,14 @@ import { SectionFeatures, FeatureList, Feature } from "./style";
 
 function Features({ items }) {
   const handlerButton = (evt) => {
-    console.log("Click");
+    console.log("Click from Feature section");
   };
   return items && items.length ? (
     <SectionFeatures>
       <Heading level="2">Почему фермерские продукты лучше?</Heading>
       <FeatureList>
         {items.map((item) => (
-          <Feature type={item.type} image={item.image} key={item.index}>
+          <Feature type={item.type} $image={item.image} key={item.index}>
             <FeatureCard item={item} />
           </Feature>
         ))}
