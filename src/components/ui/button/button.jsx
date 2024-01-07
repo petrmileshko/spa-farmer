@@ -4,6 +4,7 @@ function Button({ children, link, onClick, ...props }) {
   let newOnClick = (evt) => {
     evt.preventDefault();
     onClick && onClick(evt);
+    console.log(`Координаты: ${event.clientX} : ${event.clientY}.`);
   };
   return (
     <StyledButton

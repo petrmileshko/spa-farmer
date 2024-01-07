@@ -7,7 +7,7 @@ export const StyledButton = styled.a`
   padding: 0px 24px;
   justify-content: center;
   align-items: center;
-  font-family: Inter;
+  font-family: inherit;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
