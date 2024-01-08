@@ -1,5 +1,6 @@
 import { StyledPopUp, ClosePop } from "./style";
 import { useEffect } from "react";
+import Order from "../order/order";
 
 function PopUp({ modalShow, onClose }) {
   const handlerEsc = (evt) => {
@@ -17,8 +18,7 @@ function PopUp({ modalShow, onClose }) {
 
   return modalShow ? (
     <StyledPopUp>
-      Окно попаап фывфывыфвфывфывфывфы фывфывыфвфывфывфывфыфывыф
-      фывфывыфвфывфывфывфы фывыфв
+      <Order />
       <ClosePop onClick={() => onClose()}>X</ClosePop>
     </StyledPopUp>
   ) : null;

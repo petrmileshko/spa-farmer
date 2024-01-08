@@ -32,3 +32,35 @@ export const StyledButton = styled.a`
     box-shadow: none;
   }
 `;
+
+export const StyledSubmitButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-width: 80px;
+  min-height: 10px;
+  padding: 6px 18px;
+  font-family: inherit;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  color: #000000;
+  background-color: #00ff00;
+  border: none;
+  background-image: none;
+  box-shadow: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+  &:hover {
+    background: #ff00ff;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.14) inset;
+  }
+
+  &:active {
+    background: #ff0000;
+    box-shadow: none;
+  }
+`;

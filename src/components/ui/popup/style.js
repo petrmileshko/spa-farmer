@@ -9,6 +9,7 @@ export const StyledPopUp = styled.div`
   padding: 40px;
   background-color: red;
   transform: translate(-50%, -50%);
+  z-index: 5;
 `;
 
 export const ClosePop = styled.button`
@@ -16,5 +17,5 @@ export const ClosePop = styled.button`
   top: 10px;
   right: 10px;
   display: block;
-  backgorund-color: white;
+  background-color: white;
 `;
