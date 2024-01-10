@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledButton = styled.a`
   display: flex;
-  min-width: 220px;
+  min-width: ${(props) => (props.maxWidth ? "100%" : "260px")};
   min-height: 60px;
   padding: 0px 24px;
   justify-content: center;
@@ -22,14 +22,19 @@ export const StyledButton = styled.a`
   cursor: pointer;
   transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
 
-  &:hover {
-    background: #fc7427;
+  &:hover:not(:disabled) {
+    background: #ff00ff;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.14) inset;
   }
 
-  &:active {
-    background: #fc7427;
+  &:active:not(:disabled) {
+    background: #ff0000;
     box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: none;
   }
 `;
 
@@ -54,13 +59,18 @@ export const StyledSubmitButton = styled.button`
   cursor: pointer;
   transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #ff00ff;
     box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.14) inset;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background: #ff0000;
     box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: none;
   }
 `;

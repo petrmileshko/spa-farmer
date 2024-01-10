@@ -1,12 +1,16 @@
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import MainPage from "../../pages/main-page/main-page";
+import { Main } from "./style";
+import BuyPage from "../../pages/buy-page/buy-page";
 
-function PageWrapper({ items }) {
+function PageWrapper({ products }) {
   return (
     <>
-      <Header />
-      <MainPage items={items} />
+      <Header isBuyPage={true} />
+      <Main>
+        <BuyPage products={products} />
+      </Main>
       <Footer />
     </>
   );

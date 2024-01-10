@@ -8,3 +8,10 @@ export const StyledForm = styled.form`
   row-gap: 10px;
   background-color: #ffffff;
 `;
+
+export const Label = styled.label`
+  display: flex;
+  margin-bottom: 20px;
+  width: 90%;
+  justify-content: space-between;
+`;
