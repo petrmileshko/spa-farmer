@@ -21,7 +21,7 @@ function Button({
   ) : (
     <StyledButton
       disabled={disabled}
-      maxWidth={maxWidth}
+      $maxWidth={maxWidth}
       {...(link ? { href: link } : { as: "button", type: "button" })}
       onClick={newOnClick}
       {...props}

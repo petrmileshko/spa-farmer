@@ -17,6 +17,7 @@ export const StyledOrder = styled(Section)`
   top: 80px;
   bottom: 80px;
   display: flex;
+  width: inherit;
   padding-top: 40px;
   padding-bottom: 0;
   background-color: #f7f7f7;

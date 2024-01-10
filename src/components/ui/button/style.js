@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledButton = styled.a`
   display: flex;
-  min-width: ${(props) => (props.maxWidth ? "100%" : "260px")};
+  min-width: ${(props) => (props.$maxWidth ? "100%" : "260px")};
   min-height: 60px;
   padding: 0px 24px;
   justify-content: center;
