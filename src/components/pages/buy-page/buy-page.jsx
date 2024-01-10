@@ -8,7 +8,13 @@ import {
   AddressInput,
   PriceLabel,
   PriceValue,
+  ProductSwiper,
 } from "./style";
+
+import { SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
+import "swiper/swiper-bundle.min.css";
+SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 function BuyPage({ products }) {
   return (
@@ -30,7 +36,13 @@ function BuyPage({ products }) {
           <Button maxWidth>Купить</Button>
         </Panel>
       </LeftColumn>
-      <ProductCard product={products[0]} />
+      <ProductSwiper>
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <ProductCard product={product} />
+          </SwiperSlide>
+        ))}
+      </ProductSwiper>
     </StyledOrder>
   );
 }
