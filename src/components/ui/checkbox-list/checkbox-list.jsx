@@ -27,7 +27,6 @@ function CheckboxList({
         <Li key={option.value}>
           <Checkbox
             labelComponent={labelComponent}
-            selectValues={selectValues}
             isChecked={selectValues.includes(option.value)}
             name={name}
             value={option.value}
