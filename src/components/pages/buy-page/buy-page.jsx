@@ -23,6 +23,8 @@ SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 function BuyPage({ products }) {
   const [selectProductIds, setSelectProductIds] = useState([]);
   const [swiperRef, setSwiperRef] = useState(null);
+  const [address, setAddress] = useState("");
+
   const selectProducts = selectProductIds.map((id) =>
     products.find((product) => product.id === id)
   );
@@ -37,7 +39,17 @@ function BuyPage({ products }) {
     }
   };
 
-  return (
+  const handleBuyClick = () => {
+    alert(`Спасибо за заказ, вы купили:\n${selectProducts.map(
+      (product) => `${product.name} - ${product.price} руб.\n`
+    )}
+    Итого: ${fullPrice} руб.
+    Доставка по адресу: ${address}.`);
+  };
+
+  const isButtonEnable = address && fullPrice && selectProductIds.length;
+
+  return products && products.length ? (
     <StyledOrder as="form">
       <LeftColumn>
         <Panel $marginBottom={20} $paddingTop={24} $paddingBottom={10}>
@@ -61,10 +73,16 @@ function BuyPage({ products }) {
           <Heading level={2} size={18}>
             Сделать заказ
           </Heading>
-          <AddressInput placeholder="Введите адрес доставки" />
+          <AddressInput
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Введите адрес доставки"
+          />
           <PriceLabel as="span">Цена</PriceLabel>
           <PriceValue value={fullPrice} />
-          <Button maxWidth>Купить</Button>
+          <Button disabled={!isButtonEnable} maxWidth onClick={handleBuyClick}>
+            Купить
+          </Button>
         </Panel>
       </LeftColumn>
       <ProductSwiper
@@ -85,6 +103,8 @@ function BuyPage({ products }) {
         ))}
       </ProductSwiper>
     </StyledOrder>
+  ) : (
+    "Продукты были слишком вкусные и их разобрали."
   );
 }
 
