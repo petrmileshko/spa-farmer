@@ -30,6 +30,9 @@ export const TabToggler = styled.button`
           background-color: #f7f7f7;
           border: 1px solid rgba(0, 0, 0, 0.1);
           color: #333333;
+          &:hover {
+            color: #88aa4d;
+          }
         `}
 `;
 

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Panel from "/src/components/ui/panel/panel";
 import Heading from "../../ui/heading/heading";
 import Button from "/src/components/ui/button/button";
 import ProductCard from "../../ui/product-card/product-card";
+import CheckboxList from "../../ui/checkbox-list/checkbox-list";
+
 import {
   LeftColumn,
   StyledOrder,
@@ -9,6 +12,7 @@ import {
   PriceLabel,
   PriceValue,
   ProductSwiper,
+  CheckboxLabel,
 } from "./style";
 
 import { SwiperSlide } from "swiper/react";
@@ -17,6 +21,8 @@ import "swiper/swiper-bundle.min.css";
 SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 function BuyPage({ products }) {
+  const [selectProductIds, setSelectProductIds] = useState([]);
+
   return (
     <StyledOrder as="form">
       <LeftColumn>
@@ -24,7 +30,17 @@ function BuyPage({ products }) {
           <Heading level={2} size={18}>
             Выберите продукты
           </Heading>
-          список продуктов
+          <CheckboxList
+            labelComponent={CheckboxLabel}
+            name={"select-products"}
+            isGridList={false}
+            options={products.map((product) => ({
+              value: product.id,
+              title: product.name,
+            }))}
+            selectValues={selectProductIds}
+            onChange={setSelectProductIds}
+          />
         </Panel>
         <Panel>
           <Heading level={2} size={18}>
