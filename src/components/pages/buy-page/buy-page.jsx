@@ -23,7 +23,14 @@ SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 function BuyPage({ products }) {
   const [selectProductIds, setSelectProductIds] = useState([]);
   const [swiperRef, setSwiperRef] = useState(null);
+  const selectProducts = selectProductIds.map((id) =>
+    products.find((product) => product.id === id)
+  );
 
+  const fullPrice = selectProducts.reduce(
+    (sum, product) => (sum += product.price),
+    0
+  );
   const handleOnClickProduct = (value, index) => {
     if (!selectProductIds.includes(value)) {
       swiperRef.slideTo(index, 0);
@@ -56,7 +63,7 @@ function BuyPage({ products }) {
           </Heading>
           <AddressInput placeholder="Введите адрес доставки" />
           <PriceLabel as="span">Цена</PriceLabel>
-          <PriceValue>400</PriceValue>
+          <PriceValue value={fullPrice} />
           <Button maxWidth>Купить</Button>
         </Panel>
       </LeftColumn>
