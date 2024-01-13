@@ -1,14 +1,27 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
-export const LogoLink = styled.a`
+const logoStyle = css`
   display: flex;
-  align-items: center;
+  margin-left: -4px;
   height: 44px;
-  text-decoration: none;
+  align-items: center;
+  color: #333333;
+`;
 
-  &:hover {
+export const LogoLink = styled(Link)`
+  ${logoStyle}
+
+  &:hover,
+  &:active,
+  &:visited {
     text-decoration: none;
+    color: #333333;
   }
+`;
+
+export const LogoMain = styled.span`
+  ${logoStyle}
 `;
 
 export const LogoText = styled.span`

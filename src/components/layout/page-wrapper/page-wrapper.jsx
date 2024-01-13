@@ -1,15 +1,14 @@
 import Header from "../header/header";
 import Footer from "../footer/footer";
-import MainPage from "../../pages/main-page/main-page";
 import { Main } from "./style";
-import BuyPage from "../../pages/buy-page/buy-page";
+import { Outlet } from "react-router-dom";
 
 function PageWrapper({ products }) {
   return (
     <>
-      <Header isBuyPage={true} />
+      <Header />
       <Main>
-        <BuyPage products={products} />
+        <Outlet />
       </Main>
       <Footer />
     </>

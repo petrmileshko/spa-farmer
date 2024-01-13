@@ -1,26 +1,32 @@
+import { StyledNav, StyledButton } from "./style";
 import Button from "../../ui/button/button";
-import { StyledNav } from "./style";
-import { useState } from "react";
-import PopUp from "../../ui/popup/popup";
+import { AppRoute } from "/src/const";
+import { useLocation } from "react-router-dom";
+import { Ul, Li } from "/src/components/styled";
 
-function Nav({ isBuyPAge }) {
-  const [isShow, setIsShow] = useState(false);
+const links = [
+  {
+    to: AppRoute.MAIN,
+    item: <StyledButton link={AppRoute.MAIN}>Главная</StyledButton>,
+  },
+  {
+    to: AppRoute.BUYPAGE,
+    item: <Button link={AppRoute.BUYPAGE}>Купить</Button>,
+  },
+];
 
-  const handlerButton = (evt) => {
-    console.log("Нажата кнопка в шапке");
-    setIsShow(!isShow);
-  };
+function Nav() {
+  const pageUrl = useLocation().pathname;
 
-  return isBuyPAge ? (
+  return (
     <StyledNav>
-      <a href="/">Главная</a>
-    </StyledNav>
-  ) : (
-    <StyledNav>
-      <PopUp modalShow={isShow} onClose={() => setIsShow(false)} />
-      <Button onClick={handlerButton} link="/buy">
-        Купить
-      </Button>
+      <Ul>
+        {links
+          .filter((link) => link.to !== pageUrl)
+          .map((link) => (
+            <Li key={link.to}>{link.item}</Li>
+          ))}
+      </Ul>
     </StyledNav>
   );
 }

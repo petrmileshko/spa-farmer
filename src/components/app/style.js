@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  html {
+html {
   height: 100%;
+  margin: 0;
+  margin-left: calc(100vw - 100%);
 }
 
-html,
 body {
   margin: 0;
 }

@@ -1,9 +1,18 @@
 import { ReactComponent as LogoImage } from "/src/assets/logo.svg";
-import { LogoLink, LogoText } from "./style";
+import { LogoLink, LogoText, LogoMain } from "./style";
+import { AppRoute } from "/src/const";
+import { useLocation } from "react-router-dom";
 
 function Logo() {
-  return (
-    <LogoLink href="/">
+  const { pathname } = useLocation();
+
+  return pathname === AppRoute.MAIN ? (
+    <LogoMain>
+      <LogoImage />
+      <LogoText>Фермерские продукты</LogoText>
+    </LogoMain>
+  ) : (
+    <LogoLink to={AppRoute.MAIN}>
       <LogoImage />
       <LogoText>Фермерские продукты</LogoText>
     </LogoLink>

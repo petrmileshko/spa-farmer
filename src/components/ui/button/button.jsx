@@ -1,34 +1,24 @@
-import { StyledButton, StyledSubmitButton } from "./style";
+import { StyledButton } from "./style";
 
 function Button({
   children,
   link,
   onClick,
-  type,
+  className,
   disabled,
   maxWidth,
   ...props
 }) {
-  let newOnClick = (evt) => {
-    evt.preventDefault();
-    onClick && onClick(evt);
-    console.log(`Координаты: ${event.clientX} : ${event.clientY}.`);
-  };
-  return type === "submit" ? (
-    <StyledSubmitButton disabled={disabled} onClick={newOnClick}>
-      {children}
-    </StyledSubmitButton>
-  ) : (
+  return (
     <StyledButton
       disabled={disabled}
       $maxWidth={maxWidth}
-      {...(link ? { href: link } : { as: "button", type: "button" })}
-      onClick={newOnClick}
+      {...(link ? { to: link } : { as: "button", onClick, type: "button" })}
+      className={className}
       {...props}
     >
       {children}
     </StyledButton>
   );
 }
-
 export default Button;

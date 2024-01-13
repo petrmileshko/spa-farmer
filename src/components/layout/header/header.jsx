@@ -2,11 +2,11 @@ import Logo from "../../ui/logo/logo";
 import Nav from "../nav/nav";
 import { StyledHeader } from "./style";
 
-function Header({ isBuyPage }) {
+function Header() {
   return (
     <StyledHeader>
       <Logo />
-      <Nav isBuyPAge={isBuyPage} />
+      <Nav />
     </StyledHeader>
   );
 }
